@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MegaDesk__4_StuartPennington_HunterOakey
 {
-    public partial class Form1 : Form
+    public partial class AddQuote : Form
     {
-        public Form1()
+        public AddQuote()
         {
             InitializeComponent();
         }
