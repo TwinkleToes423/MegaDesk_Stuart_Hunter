@@ -16,5 +16,10 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
         {
             InitializeComponent();
         }
+
+        private void AddQuote_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
