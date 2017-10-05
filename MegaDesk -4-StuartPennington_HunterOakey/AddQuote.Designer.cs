@@ -171,6 +171,7 @@
             this.goBackFromAddQuote.TabIndex = 13;
             this.goBackFromAddQuote.Text = "Go Back";
             this.goBackFromAddQuote.UseVisualStyleBackColor = true;
+            this.goBackFromAddQuote.Click += new System.EventHandler(this.goBackFromAddQuote_Click);
             // 
             // AddQuote
             // 

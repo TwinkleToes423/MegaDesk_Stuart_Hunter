@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.createQuoteMainMenu = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.viewQuoteMainMenu = new System.Windows.Forms.Button();
+            this.searchQuotesMainMenu = new System.Windows.Forms.Button();
+            this.exitApplicationMainMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // createQuoteMainMenu
@@ -44,41 +44,41 @@
             this.createQuoteMainMenu.UseVisualStyleBackColor = true;
             this.createQuoteMainMenu.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // viewQuoteMainMenu
             // 
-            this.button2.Location = new System.Drawing.Point(27, 88);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(148, 34);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.viewQuoteMainMenu.Location = new System.Drawing.Point(27, 88);
+            this.viewQuoteMainMenu.Name = "viewQuoteMainMenu";
+            this.viewQuoteMainMenu.Size = new System.Drawing.Size(148, 34);
+            this.viewQuoteMainMenu.TabIndex = 1;
+            this.viewQuoteMainMenu.Text = "View Quotes";
+            this.viewQuoteMainMenu.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // searchQuotesMainMenu
             // 
-            this.button3.Location = new System.Drawing.Point(27, 128);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(148, 34);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.searchQuotesMainMenu.Location = new System.Drawing.Point(27, 128);
+            this.searchQuotesMainMenu.Name = "searchQuotesMainMenu";
+            this.searchQuotesMainMenu.Size = new System.Drawing.Size(148, 34);
+            this.searchQuotesMainMenu.TabIndex = 2;
+            this.searchQuotesMainMenu.Text = "Search Quotes";
+            this.searchQuotesMainMenu.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // exitApplicationMainMenu
             // 
-            this.button4.Location = new System.Drawing.Point(27, 168);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(148, 34);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.exitApplicationMainMenu.Location = new System.Drawing.Point(27, 168);
+            this.exitApplicationMainMenu.Name = "exitApplicationMainMenu";
+            this.exitApplicationMainMenu.Size = new System.Drawing.Size(148, 34);
+            this.exitApplicationMainMenu.TabIndex = 3;
+            this.exitApplicationMainMenu.Text = "Exit";
+            this.exitApplicationMainMenu.UseVisualStyleBackColor = true;
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 253);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.exitApplicationMainMenu);
+            this.Controls.Add(this.searchQuotesMainMenu);
+            this.Controls.Add(this.viewQuoteMainMenu);
             this.Controls.Add(this.createQuoteMainMenu);
             this.Name = "MainMenu";
             this.Text = "Form1";
@@ -89,9 +89,9 @@
         #endregion
 
         private System.Windows.Forms.Button createQuoteMainMenu;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button viewQuoteMainMenu;
+        private System.Windows.Forms.Button searchQuotesMainMenu;
+        private System.Windows.Forms.Button exitApplicationMainMenu;
     }
 }
 
