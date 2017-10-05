@@ -24,9 +24,9 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
 
         private void goBackFromAddQuote_Click(object sender, EventArgs e)
         {
-            MainMenu backToMainMenu = MainMenu();
+            /*MainMenu backToMainMenu = MainMenu();
             backToMainMenu.Show();
-            this.Hide();
+            this.Hide();*/
         }
     }
 }

@@ -8,7 +8,7 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
 {
     class DeskQuote
     {
-         
+         public Desk DeskStruct { get; set; }
          public string CustomerName { get; set; }
          public DateTime QuoteDate { get; set; }
          public decimal QuoteAmount { get; set; }
@@ -20,5 +20,11 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
             Seven_day, // >1000 = 60, <1000> = 70, <2000 = 80
             Fourteen_day //no charge
         }
+
+        //TODO:
+        //multidimensional Array for shipping amounts
+        //Quote calculations
+        //export to text file
+        //
     }
 }
