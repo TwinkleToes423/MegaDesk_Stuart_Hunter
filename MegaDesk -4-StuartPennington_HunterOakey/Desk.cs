@@ -8,10 +8,7 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
 {
     struct Desk
     {
-        public int DeskWidth { get; set; }
-        public int DeskDepth { get; set; }
-        public int NumberOfDrawers { get; set; }
-        public DeskMaterial Material { get; set; }
+        //enums'
         public enum DeskMaterial
         {
             Oak,
@@ -20,6 +17,13 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
             Rosewood,
             Veneer
         }
+
+        //properties 
+        public int DeskWidth { get; set; }
+        public int DeskDepth { get; set; }
+        public int NumberOfDrawers { get; set; }
+        public DeskMaterial Material { get; set; }
+
         //TODO:
         //CREATE CONSTRUCTOR
     }

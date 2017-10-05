@@ -36,9 +36,9 @@
             // 
             // createQuoteMainMenu
             // 
-            this.createQuoteMainMenu.Location = new System.Drawing.Point(27, 48);
+            this.createQuoteMainMenu.Location = new System.Drawing.Point(12, 12);
             this.createQuoteMainMenu.Name = "createQuoteMainMenu";
-            this.createQuoteMainMenu.Size = new System.Drawing.Size(148, 34);
+            this.createQuoteMainMenu.Size = new System.Drawing.Size(258, 57);
             this.createQuoteMainMenu.TabIndex = 0;
             this.createQuoteMainMenu.Text = "Create New Quote";
             this.createQuoteMainMenu.UseVisualStyleBackColor = true;
@@ -46,36 +46,37 @@
             // 
             // viewQuoteMainMenu
             // 
-            this.viewQuoteMainMenu.Location = new System.Drawing.Point(27, 88);
+            this.viewQuoteMainMenu.Location = new System.Drawing.Point(12, 75);
             this.viewQuoteMainMenu.Name = "viewQuoteMainMenu";
-            this.viewQuoteMainMenu.Size = new System.Drawing.Size(148, 34);
+            this.viewQuoteMainMenu.Size = new System.Drawing.Size(258, 57);
             this.viewQuoteMainMenu.TabIndex = 1;
             this.viewQuoteMainMenu.Text = "View Quotes";
             this.viewQuoteMainMenu.UseVisualStyleBackColor = true;
             // 
             // searchQuotesMainMenu
             // 
-            this.searchQuotesMainMenu.Location = new System.Drawing.Point(27, 128);
+            this.searchQuotesMainMenu.Location = new System.Drawing.Point(12, 139);
             this.searchQuotesMainMenu.Name = "searchQuotesMainMenu";
-            this.searchQuotesMainMenu.Size = new System.Drawing.Size(148, 34);
+            this.searchQuotesMainMenu.Size = new System.Drawing.Size(258, 60);
             this.searchQuotesMainMenu.TabIndex = 2;
             this.searchQuotesMainMenu.Text = "Search Quotes";
             this.searchQuotesMainMenu.UseVisualStyleBackColor = true;
             // 
             // exitApplicationMainMenu
             // 
-            this.exitApplicationMainMenu.Location = new System.Drawing.Point(27, 168);
+            this.exitApplicationMainMenu.Location = new System.Drawing.Point(12, 207);
             this.exitApplicationMainMenu.Name = "exitApplicationMainMenu";
-            this.exitApplicationMainMenu.Size = new System.Drawing.Size(148, 34);
+            this.exitApplicationMainMenu.Size = new System.Drawing.Size(258, 57);
             this.exitApplicationMainMenu.TabIndex = 3;
             this.exitApplicationMainMenu.Text = "Exit";
             this.exitApplicationMainMenu.UseVisualStyleBackColor = true;
+            this.exitApplicationMainMenu.Click += new System.EventHandler(this.exitApplicationMainMenu_Click);
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 253);
+            this.ClientSize = new System.Drawing.Size(279, 272);
             this.Controls.Add(this.exitApplicationMainMenu);
             this.Controls.Add(this.searchQuotesMainMenu);
             this.Controls.Add(this.viewQuoteMainMenu);

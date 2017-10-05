@@ -11,10 +11,13 @@ using System.Windows.Forms;
 namespace MegaDesk__4_StuartPennington_HunterOakey
 {
     public partial class AddQuote : Form
-    {
-        public AddQuote()
+    {   //saves instance of previous form
+        private Form _mainMenu;
+
+        public AddQuote(Form mainMenu)
         {
             InitializeComponent();
+            _mainMenu = mainMenu;
         }
 
         private void AddQuote_Load(object sender, EventArgs e)
@@ -24,12 +27,8 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
 
         private void goBackFromAddQuote_Click(object sender, EventArgs e)
         {
-            //TODO:
-            //MAKE THIS WORK
-
-            /*MainMenu backToMainMenu = MainMenu();
-            backToMainMenu.Show();
-            this.Hide();*/
+            _mainMenu.Show();
+            this.Close();
         }
 
 
@@ -86,6 +85,11 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
             //calculations done here. 
             int calculateDeskArea = desk.DeskWidth * desk.DeskDepth;
 
+        }
+        //calls instance of saved form in variable above. 
+        private void AddQuote_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _mainMenu.Show();
         }
     }
 }

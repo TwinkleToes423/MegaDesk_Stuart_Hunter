@@ -19,9 +19,14 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddQuote addNewQuoteForm = new AddQuote();
+            AddQuote addNewQuoteForm = new AddQuote(this);
             addNewQuoteForm.Show();
             this.Hide();
+        }
+
+        private void exitApplicationMainMenu_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
