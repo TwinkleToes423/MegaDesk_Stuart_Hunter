@@ -24,7 +24,13 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
         public int NumberOfDrawers { get; set; }
         public DeskMaterial Material { get; set; }
 
-        //TODO:
-        //CREATE CONSTRUCTOR
-    }
+      public Desk(int width, int depth,
+       int nDrawers, Desk.DeskMaterial mat)
+      {
+         this.DeskWidth = width;
+         this.DeskDepth = depth;
+         this.NumberOfDrawers = nDrawers;
+         this.Material = mat;
+      }
+   }
 }
