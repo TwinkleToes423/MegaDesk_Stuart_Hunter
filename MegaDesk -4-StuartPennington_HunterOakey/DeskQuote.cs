@@ -29,7 +29,6 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
         //multi-dimensional array for DeskDrawers
         int[,] shippingSpeedAssignment = new int[,]
             { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} };
-      //COMMENT TO CHANGE STUFF! Take this out 
 
     }
 }
