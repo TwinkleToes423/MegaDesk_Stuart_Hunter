@@ -12,7 +12,7 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
          public string CustomerName { get; set; } 
          public DateTime QuoteDate { get; set; } // get date from the system
          public decimal QuoteAmount { get; set; } // this is where the calculations for the full quote save
-         public ShippingSpeed Drawers { get; set; }
+         public ShippingSpeed Shipping { get; set; }
          public enum ShippingSpeed
         {
             Three_day, // >1000 = 30, <1000> = 35, <2000 = 40

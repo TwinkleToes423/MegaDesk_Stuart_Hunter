@@ -68,7 +68,7 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
             quote.CustomerName = customerNameBox.Text;
             quote.QuoteDate = DateTime.Today;
             quote.Shipping = shippingInputBox.Text;// TODO: THIS NEEDS TO BE CONVERTED AND THEN ASSIGNED
-            quote.QuoteAmount = DeskQuoteFinal();//result of calculations 
+            quote.QuoteAmount = DeskQuoteOutput();//result of calculations 
             quote.DeskStruct = desk;
 
             switch (shippingInputBox.Text)
