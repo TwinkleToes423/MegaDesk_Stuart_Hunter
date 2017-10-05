@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.customerNameBox = new System.Windows.Forms.TextBox();
-            this.widthInputBox = new System.Windows.Forms.TextBox();
-            this.depthInputBox = new System.Windows.Forms.TextBox();
             this.materialInputBox = new System.Windows.Forms.ComboBox();
             this.shippingInputBox = new System.Windows.Forms.ComboBox();
             this.customerNameLabel = new System.Windows.Forms.Label();
@@ -42,7 +40,11 @@
             this.shippingSpeedBox = new System.Windows.Forms.Label();
             this.generateDeskQuoteButton = new System.Windows.Forms.Button();
             this.goBackFromAddQuote = new System.Windows.Forms.Button();
+            this.depthInputBox = new System.Windows.Forms.NumericUpDown();
+            this.widthInputBox = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.drawerNumberInputForm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.depthInputBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.widthInputBox)).BeginInit();
             this.SuspendLayout();
             // 
             // customerNameBox
@@ -51,20 +53,6 @@
             this.customerNameBox.Name = "customerNameBox";
             this.customerNameBox.Size = new System.Drawing.Size(267, 22);
             this.customerNameBox.TabIndex = 0;
-            // 
-            // widthInputBox
-            // 
-            this.widthInputBox.Location = new System.Drawing.Point(12, 40);
-            this.widthInputBox.Name = "widthInputBox";
-            this.widthInputBox.Size = new System.Drawing.Size(100, 22);
-            this.widthInputBox.TabIndex = 1;
-            // 
-            // depthInputBox
-            // 
-            this.depthInputBox.Location = new System.Drawing.Point(12, 68);
-            this.depthInputBox.Name = "depthInputBox";
-            this.depthInputBox.Size = new System.Drawing.Size(100, 22);
-            this.depthInputBox.TabIndex = 2;
             // 
             // materialInputBox
             // 
@@ -78,7 +66,7 @@
             this.materialInputBox.Location = new System.Drawing.Point(12, 126);
             this.materialInputBox.Name = "materialInputBox";
             this.materialInputBox.Size = new System.Drawing.Size(121, 24);
-            this.materialInputBox.TabIndex = 3;
+            this.materialInputBox.TabIndex = 4;
             // 
             // shippingInputBox
             // 
@@ -91,7 +79,7 @@
             this.shippingInputBox.Location = new System.Drawing.Point(12, 156);
             this.shippingInputBox.Name = "shippingInputBox";
             this.shippingInputBox.Size = new System.Drawing.Size(121, 24);
-            this.shippingInputBox.TabIndex = 4;
+            this.shippingInputBox.TabIndex = 5;
             // 
             // customerNameLabel
             // 
@@ -105,7 +93,7 @@
             // widthInputLabel
             // 
             this.widthInputLabel.AutoSize = true;
-            this.widthInputLabel.Location = new System.Drawing.Point(128, 43);
+            this.widthInputLabel.Location = new System.Drawing.Point(143, 43);
             this.widthInputLabel.Name = "widthInputLabel";
             this.widthInputLabel.Size = new System.Drawing.Size(264, 17);
             this.widthInputLabel.TabIndex = 6;
@@ -114,7 +102,7 @@
             // depthInputLabel
             // 
             this.depthInputLabel.AutoSize = true;
-            this.depthInputLabel.Location = new System.Drawing.Point(128, 71);
+            this.depthInputLabel.Location = new System.Drawing.Point(139, 71);
             this.depthInputLabel.Name = "depthInputLabel";
             this.depthInputLabel.Size = new System.Drawing.Size(268, 17);
             this.depthInputLabel.TabIndex = 7;
@@ -123,9 +111,14 @@
             // drawerNumberInputForm
             // 
             this.drawerNumberInputForm.Location = new System.Drawing.Point(13, 98);
+            this.drawerNumberInputForm.Maximum = new decimal(new int[] {
+            7,
+            0,
+            0,
+            0});
             this.drawerNumberInputForm.Name = "drawerNumberInputForm";
             this.drawerNumberInputForm.Size = new System.Drawing.Size(120, 22);
-            this.drawerNumberInputForm.TabIndex = 8;
+            this.drawerNumberInputForm.TabIndex = 3;
             // 
             // label1
             // 
@@ -159,7 +152,7 @@
             this.generateDeskQuoteButton.Location = new System.Drawing.Point(195, 288);
             this.generateDeskQuoteButton.Name = "generateDeskQuoteButton";
             this.generateDeskQuoteButton.Size = new System.Drawing.Size(187, 44);
-            this.generateDeskQuoteButton.TabIndex = 12;
+            this.generateDeskQuoteButton.TabIndex = 6;
             this.generateDeskQuoteButton.Text = "Generate Desk Quote";
             this.generateDeskQuoteButton.UseVisualStyleBackColor = true;
             // 
@@ -168,16 +161,32 @@
             this.goBackFromAddQuote.Location = new System.Drawing.Point(403, 288);
             this.goBackFromAddQuote.Name = "goBackFromAddQuote";
             this.goBackFromAddQuote.Size = new System.Drawing.Size(122, 44);
-            this.goBackFromAddQuote.TabIndex = 13;
+            this.goBackFromAddQuote.TabIndex = 7;
             this.goBackFromAddQuote.Text = "Go Back";
             this.goBackFromAddQuote.UseVisualStyleBackColor = true;
             this.goBackFromAddQuote.Click += new System.EventHandler(this.goBackFromAddQuote_Click);
+            // 
+            // depthInputBox
+            // 
+            this.depthInputBox.Location = new System.Drawing.Point(13, 69);
+            this.depthInputBox.Name = "depthInputBox";
+            this.depthInputBox.Size = new System.Drawing.Size(120, 22);
+            this.depthInputBox.TabIndex = 2;
+            // 
+            // widthInputBox
+            // 
+            this.widthInputBox.Location = new System.Drawing.Point(13, 40);
+            this.widthInputBox.Name = "widthInputBox";
+            this.widthInputBox.Size = new System.Drawing.Size(120, 22);
+            this.widthInputBox.TabIndex = 1;
             // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(608, 344);
+            this.Controls.Add(this.widthInputBox);
+            this.Controls.Add(this.depthInputBox);
             this.Controls.Add(this.goBackFromAddQuote);
             this.Controls.Add(this.generateDeskQuoteButton);
             this.Controls.Add(this.shippingSpeedBox);
@@ -189,13 +198,13 @@
             this.Controls.Add(this.customerNameLabel);
             this.Controls.Add(this.shippingInputBox);
             this.Controls.Add(this.materialInputBox);
-            this.Controls.Add(this.depthInputBox);
-            this.Controls.Add(this.widthInputBox);
             this.Controls.Add(this.customerNameBox);
             this.Name = "AddQuote";
             this.Text = "AddQuote";
             this.Load += new System.EventHandler(this.AddQuote_Load);
             ((System.ComponentModel.ISupportInitialize)(this.drawerNumberInputForm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.depthInputBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.widthInputBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,8 +213,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox customerNameBox;
-        private System.Windows.Forms.TextBox widthInputBox;
-        private System.Windows.Forms.TextBox depthInputBox;
         private System.Windows.Forms.ComboBox materialInputBox;
         private System.Windows.Forms.ComboBox shippingInputBox;
         private System.Windows.Forms.Label customerNameLabel;
@@ -217,5 +224,7 @@
         private System.Windows.Forms.Label shippingSpeedBox;
         private System.Windows.Forms.Button generateDeskQuoteButton;
         private System.Windows.Forms.Button goBackFromAddQuote;
+        private System.Windows.Forms.NumericUpDown depthInputBox;
+        private System.Windows.Forms.NumericUpDown widthInputBox;
     }
 }
