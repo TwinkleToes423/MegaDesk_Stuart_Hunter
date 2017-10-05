@@ -66,7 +66,7 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
          total += DeskStruct.NumberOfDrawers * 50;
 
          // Add rush cost
-         total += getRushPrice(desks);
+         total += getRushPrice(desks, /*TODO: FIX ME */ 3 /* TODO: Get rid of this hardcode value. It's just here to compile */);
 
          // Calculate for number of desks
          total *= desks;
@@ -93,9 +93,9 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
          }
       }
 
-      private int getRushPrice(int desks)
+      private int getRushPrice(int desks, int rushDays)
       {
-         switch (DeskStruct.RushDays)
+         switch (rushDays)
          {
             // 3 day rush
             case 3:
