@@ -155,6 +155,7 @@
             this.generateDeskQuoteButton.TabIndex = 6;
             this.generateDeskQuoteButton.Text = "Generate Desk Quote";
             this.generateDeskQuoteButton.UseVisualStyleBackColor = true;
+            this.generateDeskQuoteButton.Click += new System.EventHandler(this.generateDeskQuoteButton_Click);
             // 
             // goBackFromAddQuote
             // 
@@ -169,16 +170,46 @@
             // depthInputBox
             // 
             this.depthInputBox.Location = new System.Drawing.Point(13, 69);
+            this.depthInputBox.Maximum = new decimal(new int[] {
+            48,
+            0,
+            0,
+            0});
+            this.depthInputBox.Minimum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
             this.depthInputBox.Name = "depthInputBox";
             this.depthInputBox.Size = new System.Drawing.Size(120, 22);
             this.depthInputBox.TabIndex = 2;
+            this.depthInputBox.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
             // 
             // widthInputBox
             // 
             this.widthInputBox.Location = new System.Drawing.Point(13, 40);
+            this.widthInputBox.Maximum = new decimal(new int[] {
+            96,
+            0,
+            0,
+            0});
+            this.widthInputBox.Minimum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
             this.widthInputBox.Name = "widthInputBox";
             this.widthInputBox.Size = new System.Drawing.Size(120, 22);
             this.widthInputBox.TabIndex = 1;
+            this.widthInputBox.Value = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
             // 
             // AddQuote
             // 

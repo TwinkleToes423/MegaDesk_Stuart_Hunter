@@ -10,6 +10,7 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
     {
         public int DeskWidth { get; set; }
         public int DeskDepth { get; set; }
+        public int NumberOfDrawers { get; set; }
         public DeskMaterial Material { get; set; }
         public enum DeskMaterial
         {
