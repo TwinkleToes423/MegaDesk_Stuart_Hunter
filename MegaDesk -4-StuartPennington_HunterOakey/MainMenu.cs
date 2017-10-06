@@ -28,5 +28,10 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
         {
             Application.Exit();
         }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
