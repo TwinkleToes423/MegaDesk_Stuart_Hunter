@@ -63,7 +63,7 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
 
          quote.CustomerName = customerNameBox.Text;
          quote.QuoteDate = DateTime.Today;
-         quote.QuoteAmount = 0.0m; //DeskQuoteOutput();//result of calculations //TODO: Make this function
+         quote.QuoteAmount = quote.getDeskPrice(); //DeskQuoteOutput();//result of calculations //TODO: Make this function
          quote.DeskStruct = desk;
 
          switch (shippingInputBox.SelectedValue.ToString())

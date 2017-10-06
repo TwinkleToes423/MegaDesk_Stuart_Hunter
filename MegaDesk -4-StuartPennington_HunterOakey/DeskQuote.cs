@@ -1,32 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace MegaDesk__4_StuartPennington_HunterOakey
 {
-    class DeskQuote
-    {
-        //enums'
-        public enum ShippingSpeed
-        {
-            Three_day, // >1000 = 30, <1000> = 35, <2000 = 40
-            Five_day, // >1000 = 40, <1000> = 50, <2000 = 60
-            Seven_day, // >1000 = 60, <1000> = 70, <2000 = 80
-            Fourteen_day //no charge
-        }
+   class DeskQuote
+   {
+      //enums'
+      public enum ShippingSpeed
+      {
+         Three_day, // >1000 = 30, <1000> = 35, <2000 = 40
+         Five_day, // >1000 = 40, <1000> = 50, <2000 = 60
+         Seven_day, // >1000 = 60, <1000> = 70, <2000 = 80
+         Fourteen_day //no charge
+      }
 
-        //properties
-         public Desk DeskStruct { get; set; } //pass desk struct to this class
-         public string CustomerName { get; set; } 
-         public DateTime QuoteDate { get; set; } // get date from the system
-         public decimal QuoteAmount { get; set; } // this is where the calculations for the full PRICE quote save
-         public ShippingSpeed Shipping { get; set; }
+      //properties
+      public Desk DeskStruct { get; set; } //pass desk struct to this class
+      public string CustomerName { get; set; }
+      public DateTime QuoteDate { get; set; } // get date from the system
+      public decimal QuoteAmount { get; set; } // this is where the calculations for the full PRICE quote save
+      public ShippingSpeed Shipping { get; set; }
 
-        //multi-dimensional array for SHIPPING SPEED PRICES
-        int[,] shippingSpeedAssignment = new int[,]
-            { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} };
+      //multi-dimensional array for SHIPPING SPEED PRICES
+      int[,] shippingSpeedAssignment;
 
       //TODO:
       //multidimensional Array for shipping amounts
@@ -38,18 +36,13 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
          DeskStruct = new Desk();
       }
 
-      public double makeDesk(int width, int depth,
-         int nDrawers, Desk.DeskMaterial mat, int numDesks)
+
+      private double getDeskPrice(int width, int depth,
+         int nDrawers, Desk.DeskMaterial mat, int desks)
       {
-         // Make our desk
+         //Make the desk structure
          DeskStruct = new Desk(width, depth, nDrawers, mat);
 
-         // Give back the price
-         return calcPrice(numDesks);
-      }
-
-      private double calcPrice(int desks)
-      {
          // Base price to add to
          double total = 200.0;
 
@@ -105,7 +98,7 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
                //Medium number of desks
                else if (desks < 2000)
                   return 70;
-               //High number of desks
+               // High number of desks
                else
                   return 80;
             // 5 day rush
@@ -128,6 +121,28 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
             default:
                return 0;
          }
+      }
+
+      private void getRushPrice(string filePath)
+      {
+         // Immediately error out if the 
+         if (!File.Exists(filePath))
+         {
+            throw new Exception("ERROR: Rush days configuration file does not exist.");
+         }
+
+         // Read in all the price points
+         string[] prices = File.ReadAllLines(filePath);
+
+         // Discover the size that should be used for our array
+         // It is square root of 
+         //int dimension = Math.Sqrt(prices.Length) - 1;
+
+         // Initialize a 2-dimensional integer array
+         // The NEW operator will populate this table of ints to 0
+         int[,] shippingSpeedAssignment = new int[2,2];
+
+         //for ()
       }
    }
 }
