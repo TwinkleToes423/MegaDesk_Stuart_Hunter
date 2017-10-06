@@ -30,8 +30,8 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
       private int[,] shippingSpeedAssignment { get; set; }
 
       //TODO:
-      //multidimensional Array for shipping amounts
-      //Quote calculations
+      //multidimensional Array for shipping amounts   // Mostly complete. The file has not been added.
+      //Quote calculations       // COMPLETE
       //export to text file
 
       public DeskQuote()

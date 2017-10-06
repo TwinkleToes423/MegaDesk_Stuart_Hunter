@@ -61,12 +61,6 @@
          // materialInputBox
          // 
          this.materialInputBox.FormattingEnabled = true;
-         this.materialInputBox.Items.AddRange(new object[] {
-            "Oak",
-            "Laminate",
-            "Pine",
-            "Rosewood",
-            "Veneer"});
          this.materialInputBox.Location = new System.Drawing.Point(9, 102);
          this.materialInputBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
          this.materialInputBox.Name = "materialInputBox";
@@ -166,7 +160,7 @@
          this.generateDeskQuoteButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
          this.generateDeskQuoteButton.Name = "generateDeskQuoteButton";
          this.generateDeskQuoteButton.Size = new System.Drawing.Size(140, 36);
-         this.generateDeskQuoteButton.TabIndex = 6;
+         this.generateDeskQuoteButton.TabIndex = 7;
          this.generateDeskQuoteButton.Text = "Generate Desk Quote";
          this.generateDeskQuoteButton.UseVisualStyleBackColor = true;
          this.generateDeskQuoteButton.Click += new System.EventHandler(this.generateDeskQuoteButton_Click);
@@ -177,7 +171,7 @@
          this.goBackFromAddQuote.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
          this.goBackFromAddQuote.Name = "goBackFromAddQuote";
          this.goBackFromAddQuote.Size = new System.Drawing.Size(92, 36);
-         this.goBackFromAddQuote.TabIndex = 7;
+         this.goBackFromAddQuote.TabIndex = 8;
          this.goBackFromAddQuote.Text = "Go Back";
          this.goBackFromAddQuote.UseVisualStyleBackColor = true;
          this.goBackFromAddQuote.Click += new System.EventHandler(this.goBackFromAddQuote_Click);

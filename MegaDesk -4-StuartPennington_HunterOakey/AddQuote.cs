@@ -18,6 +18,11 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
       {
          InitializeComponent();
          _mainMenu = mainMenu;
+
+         // Get possible materials
+         List<string> materials = Enum.GetNames(typeof(Desk.DeskMaterial)).ToList<string>();
+         // Populate the materials list
+         materialInputBox.DataSource = materials;
       }
 
       private void AddQuote_Load(object sender, EventArgs e)
