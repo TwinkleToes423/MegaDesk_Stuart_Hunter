@@ -116,7 +116,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(843, 466);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "ViewAllQuotes";
             this.Text = "ViewAllQuotes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
