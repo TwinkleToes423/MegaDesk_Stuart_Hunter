@@ -89,6 +89,11 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
          quote.QuoteAmount = quote.getDeskPrice(desk, (int)numDesksInputBox.Value, quote.Shipping); // Get the quote amount
          quote.DeskStruct = desk;
 
+         // Display the quote price to 2 decimal places
+         priceLabel.Text = "$" + quote.QuoteAmount.ToString("0.00");
+
+         // Save the current quote
+         quote.save();
       }
       //calls instance of saved form in variable above. 
       private void AddQuote_FormClosed(object sender, FormClosedEventArgs e)

@@ -44,6 +44,7 @@
          this.widthInputBox = new System.Windows.Forms.NumericUpDown();
          this.numDesksInputBox = new System.Windows.Forms.NumericUpDown();
          this.label2 = new System.Windows.Forms.Label();
+         this.priceLabel = new System.Windows.Forms.Label();
          ((System.ComponentModel.ISupportInitialize)(this.drawerNumberInputForm)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.depthInputBox)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.widthInputBox)).BeginInit();
@@ -53,7 +54,7 @@
          // customerNameBox
          // 
          this.customerNameBox.Location = new System.Drawing.Point(9, 10);
-         this.customerNameBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.customerNameBox.Margin = new System.Windows.Forms.Padding(2);
          this.customerNameBox.Name = "customerNameBox";
          this.customerNameBox.Size = new System.Drawing.Size(201, 20);
          this.customerNameBox.TabIndex = 0;
@@ -62,7 +63,7 @@
          // 
          this.materialInputBox.FormattingEnabled = true;
          this.materialInputBox.Location = new System.Drawing.Point(9, 102);
-         this.materialInputBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.materialInputBox.Margin = new System.Windows.Forms.Padding(2);
          this.materialInputBox.Name = "materialInputBox";
          this.materialInputBox.Size = new System.Drawing.Size(92, 21);
          this.materialInputBox.TabIndex = 4;
@@ -76,7 +77,7 @@
             "7 day",
             "14 day"});
          this.shippingInputBox.Location = new System.Drawing.Point(9, 127);
-         this.shippingInputBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.shippingInputBox.Margin = new System.Windows.Forms.Padding(2);
          this.shippingInputBox.Name = "shippingInputBox";
          this.shippingInputBox.Size = new System.Drawing.Size(92, 21);
          this.shippingInputBox.TabIndex = 5;
@@ -114,7 +115,7 @@
          // drawerNumberInputForm
          // 
          this.drawerNumberInputForm.Location = new System.Drawing.Point(10, 80);
-         this.drawerNumberInputForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.drawerNumberInputForm.Margin = new System.Windows.Forms.Padding(2);
          this.drawerNumberInputForm.Maximum = new decimal(new int[] {
             7,
             0,
@@ -157,7 +158,7 @@
          // generateDeskQuoteButton
          // 
          this.generateDeskQuoteButton.Location = new System.Drawing.Point(146, 234);
-         this.generateDeskQuoteButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.generateDeskQuoteButton.Margin = new System.Windows.Forms.Padding(2);
          this.generateDeskQuoteButton.Name = "generateDeskQuoteButton";
          this.generateDeskQuoteButton.Size = new System.Drawing.Size(140, 36);
          this.generateDeskQuoteButton.TabIndex = 7;
@@ -168,7 +169,7 @@
          // goBackFromAddQuote
          // 
          this.goBackFromAddQuote.Location = new System.Drawing.Point(302, 234);
-         this.goBackFromAddQuote.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.goBackFromAddQuote.Margin = new System.Windows.Forms.Padding(2);
          this.goBackFromAddQuote.Name = "goBackFromAddQuote";
          this.goBackFromAddQuote.Size = new System.Drawing.Size(92, 36);
          this.goBackFromAddQuote.TabIndex = 8;
@@ -179,7 +180,7 @@
          // depthInputBox
          // 
          this.depthInputBox.Location = new System.Drawing.Point(10, 56);
-         this.depthInputBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.depthInputBox.Margin = new System.Windows.Forms.Padding(2);
          this.depthInputBox.Maximum = new decimal(new int[] {
             48,
             0,
@@ -202,7 +203,7 @@
          // widthInputBox
          // 
          this.widthInputBox.Location = new System.Drawing.Point(10, 32);
-         this.widthInputBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.widthInputBox.Margin = new System.Windows.Forms.Padding(2);
          this.widthInputBox.Maximum = new decimal(new int[] {
             96,
             0,
@@ -255,11 +256,21 @@
          this.label2.TabIndex = 13;
          this.label2.Text = "Please enter the number of desks";
          // 
+         // priceLabel
+         // 
+         this.priceLabel.AutoSize = true;
+         this.priceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.priceLabel.Location = new System.Drawing.Point(12, 234);
+         this.priceLabel.Name = "priceLabel";
+         this.priceLabel.Size = new System.Drawing.Size(0, 17);
+         this.priceLabel.TabIndex = 14;
+         // 
          // AddQuote
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.ClientSize = new System.Drawing.Size(456, 280);
+         this.Controls.Add(this.priceLabel);
          this.Controls.Add(this.label2);
          this.Controls.Add(this.numDesksInputBox);
          this.Controls.Add(this.widthInputBox);
@@ -276,7 +287,7 @@
          this.Controls.Add(this.shippingInputBox);
          this.Controls.Add(this.materialInputBox);
          this.Controls.Add(this.customerNameBox);
-         this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.Margin = new System.Windows.Forms.Padding(2);
          this.Name = "AddQuote";
          this.Text = "AddQuote";
          this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddQuote_FormClosed);
@@ -308,5 +319,6 @@
         private System.Windows.Forms.NumericUpDown widthInputBox;
       private System.Windows.Forms.NumericUpDown numDesksInputBox;
       private System.Windows.Forms.Label label2;
+      private System.Windows.Forms.Label priceLabel;
    }
 }

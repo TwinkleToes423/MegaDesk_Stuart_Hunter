@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace MegaDesk__4_StuartPennington_HunterOakey
 {
    class DeskQuote
    {
-      //enums'
+      //enums
       public enum ShippingSpeed
       {
          Three_day, // >1000 = 30, <1000> = 35, <2000 = 40
@@ -17,7 +18,8 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
       }
 
       //values
-      const string rushPricesPath = "rushOrderPrices.txt";   // Path to the config file
+      const string SaveFilePath = "savedQuotes.json";
+      const string RushPricesPath = "rushOrderPrices.txt";   // Path to the config file
 
       //properties
       public Desk DeskStruct { get; set; } //pass desk struct to this class
@@ -32,7 +34,7 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
       //TODO:
       //multidimensional Array for shipping amounts   // Mostly complete. The file has not been added.
       //Quote calculations       // COMPLETE
-      //export to text file
+      //export to text file      // COMPLETE
 
       public DeskQuote()
       {
@@ -45,7 +47,7 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
          // Make the desk structure
          DeskStruct = desk;
          // Get our prices
-         shippingSpeedAssignment = initRushPrices(rushPricesPath);
+         shippingSpeedAssignment = initRushPrices(RushPricesPath);
 
          // Base price to add to
          decimal total = 200.0M;
@@ -155,6 +157,31 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
          }
 
          return priceMatrix;
+      }
+
+      public void save()
+      {
+         // Make a container for our saved desks
+         List<Desk> desks = new List<Desk>();
+
+         // If a save file already exists, read from and append to it
+         if (File.Exists(SaveFilePath))
+         {
+            // Load all saves
+            string savedDesks = File.ReadAllText(SaveFilePath);
+
+            // Deserialize the saved list of desks
+            desks = JsonConvert.DeserializeObject<List<Desk>>(savedDesks);
+         }
+
+         // Add the current desk to the (possibly empty) list of desks
+         desks.Add(DeskStruct);
+
+         // JSONify
+         string JSONDesks = JsonConvert.SerializeObject(desks);
+
+         // Save our JSON
+         File.WriteAllText(SaveFilePath, JSONDesks);
       }
    }
 }
