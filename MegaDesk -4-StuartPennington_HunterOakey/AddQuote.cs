@@ -61,12 +61,7 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
 
          DeskQuote quote = new DeskQuote();
 
-         quote.CustomerName = customerNameBox.Text;
-         quote.QuoteDate = DateTime.Today;
-         quote.QuoteAmount = quote.getDeskPrice(); //DeskQuoteOutput();//result of calculations //TODO: Make this function
-         quote.DeskStruct = desk;
-
-         switch (shippingInputBox.SelectedValue.ToString())
+         switch (shippingInputBox.ValueMember.ToString())
          {
             case "Three Day":
                quote.Shipping = DeskQuote.ShippingSpeed.Three_day;
@@ -83,6 +78,11 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
          }
          //calculations done here. 
          int calculateDeskArea = desk.DeskWidth * desk.DeskDepth;
+
+         quote.CustomerName = customerNameBox.Text;
+         quote.QuoteDate = DateTime.Today;
+         quote.QuoteAmount = quote.getDeskPrice(desk, (int)numDesksInputBox.Value, quote.Shipping); // Get the quote amount
+         quote.DeskStruct = desk;
 
       }
       //calls instance of saved form in variable above. 

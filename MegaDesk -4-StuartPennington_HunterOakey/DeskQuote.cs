@@ -16,6 +16,9 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
          Fourteen_day //no charge
       }
 
+      //values
+      const string rushPricesPath = "rushOrderPrices.txt";   // Path to the config file
+
       //properties
       public Desk DeskStruct { get; set; } //pass desk struct to this class
       public string CustomerName { get; set; }
@@ -24,7 +27,7 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
       public ShippingSpeed Shipping { get; set; }
 
       //multi-dimensional array for SHIPPING SPEED PRICES
-      int[,] shippingSpeedAssignment;
+      private int[,] shippingSpeedAssignment { get; set; }
 
       //TODO:
       //multidimensional Array for shipping amounts
@@ -37,14 +40,15 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
       }
 
 
-      private double getDeskPrice(int width, int depth,
-         int nDrawers, Desk.DeskMaterial mat, int desks)
+      public decimal getDeskPrice(Desk desk, int desks, ShippingSpeed days)
       {
-         //Make the desk structure
-         DeskStruct = new Desk(width, depth, nDrawers, mat);
+         // Make the desk structure
+         DeskStruct = desk;
+         // Get our prices
+         shippingSpeedAssignment = initRushPrices(rushPricesPath);
 
          // Base price to add to
-         double total = 200.0;
+         decimal total = 200.0M;
 
          //Add large-size cost
          // Desktop Surface Area > 1000 in(2) $1 per in(2)
@@ -59,7 +63,7 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
          total += DeskStruct.NumberOfDrawers * 50;
 
          // Add rush cost
-         total += getRushPrice(desks, /*TODO: FIX ME */ 3 /* TODO: Get rid of this hardcode value. It's just here to compile */);
+         total += getRushPrice(desks, days);
 
          // Calculate for number of desks
          total *= desks;
@@ -86,44 +90,44 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
          }
       }
 
-      private int getRushPrice(int desks, int rushDays)
+      private int getRushPrice(int desks, ShippingSpeed rushDays)
       {
          switch (rushDays)
          {
             // 3 day rush
-            case 3:
+            case ShippingSpeed.Three_day:
                //Small number of desks
                if (desks < 1000)
-                  return 60;
+                  return shippingSpeedAssignment[0,0];
                //Medium number of desks
                else if (desks < 2000)
-                  return 70;
+                  return shippingSpeedAssignment[0, 1];
                // High number of desks
                else
-                  return 80;
+                  return shippingSpeedAssignment[0, 2];
             // 5 day rush
-            case 5:
+            case ShippingSpeed.Five_day:
                if (desks < 1000)
-                  return 40;
+                  return shippingSpeedAssignment[1, 0];
                else if (desks < 2000)
-                  return 50;
+                  return shippingSpeedAssignment[1, 1];
                else
-                  return 60;
+                  return shippingSpeedAssignment[1, 2];
             // 7 day rush
-            case 7:
+            case ShippingSpeed.Seven_day:
                if (desks < 1000)
-                  return 30;
+                  return shippingSpeedAssignment[2, 0];
                else if (desks < 2000)
-                  return 35;
+                  return shippingSpeedAssignment[2, 1];
                else
-                  return 40;
+                  return shippingSpeedAssignment[2, 2];
             // No rush
             default:
                return 0;
          }
       }
 
-      private void getRushPrice(string filePath)
+      private int[,] initRushPrices(string filePath)
       {
          // Immediately error out if the 
          if (!File.Exists(filePath))
@@ -134,15 +138,23 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
          // Read in all the price points
          string[] prices = File.ReadAllLines(filePath);
 
-         // Discover the size that should be used for our array
-         // It is square root of 
-         //int dimension = Math.Sqrt(prices.Length) - 1;
-
          // Initialize a 2-dimensional integer array
          // The NEW operator will populate this table of ints to 0
-         int[,] shippingSpeedAssignment = new int[2,2];
+         int[,] priceMatrix = new int[2, 2];
 
-         //for ()
+         // Keep track of which prices we've used
+         int pricesCount = 0;
+         // Populate the array, row first then column
+         for (int row = 0; row < 2; row++)
+         {
+            for (int col = 0; col < 2; col++)
+            {
+               // Add the price to our 2D array
+               priceMatrix[row, col] = Int32.Parse(prices[pricesCount++]);
+            }
+         }
+
+         return priceMatrix;
       }
    }
 }
