@@ -159,26 +159,26 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
          return priceMatrix;
       }
 
-      public void save()
+      public static void save(DeskQuote quote)
       {
          // Make a container for our saved desks
-         List<Desk> desks = new List<Desk>();
+         List<DeskQuote> quotes = new List<DeskQuote>();
 
          // If a save file already exists, read from and append to it
          if (File.Exists(SaveFilePath))
          {
             // Load all saves
-            string savedDesks = File.ReadAllText(SaveFilePath);
+            string savedQuotes = File.ReadAllText(SaveFilePath);
 
             // Deserialize the saved list of desks
-            desks = JsonConvert.DeserializeObject<List<Desk>>(savedDesks);
+            quotes = JsonConvert.DeserializeObject<List<DeskQuote>>(savedQuotes);
          }
 
          // Add the current desk to the (possibly empty) list of desks
-         desks.Add(DeskStruct);
+         quotes.Add(quote);
 
          // JSONify
-         string JSONDesks = JsonConvert.SerializeObject(desks);
+         string JSONDesks = JsonConvert.SerializeObject(quotes);
 
          // Save our JSON
          File.WriteAllText(SaveFilePath, JSONDesks);
