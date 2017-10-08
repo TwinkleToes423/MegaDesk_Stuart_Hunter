@@ -98,6 +98,7 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
 
             }*/
       }
+
       //calls instance of saved form in variable above. 
       private void AddQuote_FormClosed(object sender, FormClosedEventArgs e)
       {

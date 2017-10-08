@@ -128,8 +128,28 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
                return 0;
          }
       }
+        public void writetoFile(Desk desk, DeskQuote quote)
+        {
+            DateTime date = new DateTime();
+            date = DateTime.Now;
 
-      private int[,] initRushPrices(string filePath)
+            StreamWriter writer;
+            writer = new StreamWriter("quotes.txt", append: true);
+            writer.WriteLine("{0},{1},{2},{3},{4},{5},{6},${7}",
+                quote.CustomerName,
+                date,
+                desk.DeskWidth.ToString(),
+                desk.DeskDepth.ToString(),
+                desk.NumberOfDrawers.ToString(),
+                desk.Material,
+                quote.Shipping,
+                quote.QuoteAmount
+                );
+            writer.Close();
+
+        }
+
+        private int[,] initRushPrices(string filePath)
       {
          // Immediately error out if the file path does not exist. 
          if (!File.Exists(filePath))
