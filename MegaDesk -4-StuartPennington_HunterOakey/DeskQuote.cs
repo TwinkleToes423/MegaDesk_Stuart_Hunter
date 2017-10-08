@@ -179,7 +179,7 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
          return priceMatrix;
       }
 
-      public static void save(DeskQuote quote)
+      public static void Save(DeskQuote quote)
       {
          // Make a container for our saved desks
          List<DeskQuote> quotes = new List<DeskQuote>();

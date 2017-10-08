@@ -12,9 +12,12 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
 {
     public partial class DisplayQuote : Form
     {
+       
+
         public DisplayQuote()
         {
             InitializeComponent();
+           
         }
     }
 }

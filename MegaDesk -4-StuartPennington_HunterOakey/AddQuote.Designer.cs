@@ -58,6 +58,7 @@
             this.customerNameBox.Name = "customerNameBox";
             this.customerNameBox.Size = new System.Drawing.Size(267, 22);
             this.customerNameBox.TabIndex = 0;
+            
             // 
             // materialInputBox
             // 
@@ -287,7 +288,7 @@
             this.Name = "AddQuote";
             this.Text = "AddQuote";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddQuote_FormClosed);
-            this.Load += new System.EventHandler(this.AddQuote_Load);
+           
             ((System.ComponentModel.ISupportInitialize)(this.drawerNumberInputForm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.depthInputBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.widthInputBox)).EndInit();

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MegaDesk__4_StuartPennington_HunterOakey
 {
-  
+    //removed this portion of code and entered the get; and set; parameters below as part of the desk struct
        /* //properties 
         public int DeskWidth { get; set; }
         public int DeskDepth { get; set; }

@@ -25,11 +25,6 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
          materialInputBox.DataSource = materials;
       }
 
-      private void AddQuote_Load(object sender, EventArgs e)
-      {
-
-      }
-
       private void goBackFromAddQuote_Click(object sender, EventArgs e)
       {
          _mainMenu.Show();
@@ -93,10 +88,8 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
          priceLabel.Text = "$" + quote.QuoteAmount.ToString("0.00");
 
             // Save the current quote
-            /*quote.save();
-            {
-
-            }*/
+            DeskQuote.Save(quote);
+            
       }
 
       //calls instance of saved form in variable above. 
@@ -104,5 +97,6 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
       {
          _mainMenu.Show();
       }
-   }
+
+    }
 }

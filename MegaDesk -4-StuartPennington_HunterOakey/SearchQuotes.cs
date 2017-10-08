@@ -19,5 +19,10 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
             InitializeComponent();
             _mainMenu3 = mainMenu;
         }
+
+        private void SearchQuotes_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _mainMenu3.Show();
+        }
     }
 }
