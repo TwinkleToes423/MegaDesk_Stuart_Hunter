@@ -12,9 +12,12 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
 {
     public partial class SearchQuotes : Form
     {
-        public SearchQuotes()
+        private Form _mainMenu3;
+
+        public SearchQuotes(Form mainMenu)
         {
             InitializeComponent();
+            _mainMenu3 = mainMenu;
         }
     }
 }

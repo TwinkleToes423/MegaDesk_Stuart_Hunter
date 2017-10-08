@@ -12,9 +12,12 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
 {
     public partial class ViewAllQuotes : Form
     {
-        public ViewAllQuotes()
+        private Form _mainMenu2;
+
+        public ViewAllQuotes(Form mainMenu)
         {
             InitializeComponent();
+            _mainMenu2 = mainMenu;
         }
     }
 }

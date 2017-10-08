@@ -24,14 +24,23 @@ namespace MegaDesk__4_StuartPennington_HunterOakey
             this.Hide();
         }
 
+        private void viewQuoteMainMenu_Click(object sender, EventArgs e)
+        {
+            ViewAllQuotes viewAllQuotesForm = new ViewAllQuotes(this);
+            viewAllQuotesForm.Show();
+            this.Hide();
+        }
+
+        private void searchQuotesMainMenu_Click(object sender, EventArgs e)
+        {
+            SearchQuotes searchQuotesForm = new SearchQuotes(this);
+            searchQuotesForm.Show();
+            this.Hide();
+        }
+
         private void exitApplicationMainMenu_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void MainMenu_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

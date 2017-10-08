@@ -52,6 +52,7 @@
             this.viewQuoteMainMenu.TabIndex = 1;
             this.viewQuoteMainMenu.Text = "View Quotes";
             this.viewQuoteMainMenu.UseVisualStyleBackColor = true;
+            this.viewQuoteMainMenu.Click += new System.EventHandler(this.viewQuoteMainMenu_Click);
             // 
             // searchQuotesMainMenu
             // 
@@ -61,6 +62,7 @@
             this.searchQuotesMainMenu.TabIndex = 2;
             this.searchQuotesMainMenu.Text = "Search Quotes";
             this.searchQuotesMainMenu.UseVisualStyleBackColor = true;
+            this.searchQuotesMainMenu.Click += new System.EventHandler(this.searchQuotesMainMenu_Click);
             // 
             // exitApplicationMainMenu
             // 
@@ -83,7 +85,6 @@
             this.Controls.Add(this.createQuoteMainMenu);
             this.Name = "MainMenu";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.MainMenu_Load);
             this.ResumeLayout(false);
 
         }
